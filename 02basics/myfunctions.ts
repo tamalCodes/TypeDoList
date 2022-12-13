@@ -1,21 +1,21 @@
-function addTwo(num: number): number{
-     return num + 2
-    //return "hello"
+// ^ Function + types : in the function we can define the type of the argument and the return type of the function
+
+function addTwo(num: number): number {
+  return num + 2;
+  //return "hello"
 }
+let myValue = addTwo(5);
 
-function getUpper(val: string){
-    return val.toUpperCase()
+function getUpper(val: string) {
+  return val.toUpperCase();
 }
+getUpper("hitesh");
 
-function signUpUser(name: string, email: string, isPaid: boolean){}
+function signUpUser(name: string, email: string, isPaid: boolean) {}
+signUpUser("hitesh", "hitesh@lco.dev", false);
 
-let loginUser = (name: string, email: string, isPaid: boolean = false) => {}
-
-let myValue = addTwo(5)
-getUpper("hitesh")
-
-signUpUser("hitesh", "hitesh@lco.dev", false)
-loginUser("h", "h@h.com")
+let loginUser = (name: string, email: string, isPaid: boolean = false) => {};
+loginUser("h", "h@h.com");
 
 // function getValue(myVal: number): boolean{
 //     if (myVal > 5) {
@@ -24,27 +24,19 @@ loginUser("h", "h@h.com")
 //     return "200 OK"
 // }
 
-const getHello = (s: string):string => {
-    return ""
-}
-
-const heros = ["thor", "spiderman", "ironman"]
+const heros = ["thor", "spiderman", "ironman"];
 // const heros = [1, 2, 3]
 
 heros.map((hero): string => {
-    return `hero is ${hero}`
-})
+  return `hero is ${hero}`;
+});
 
-
-function consoleError(errmsg: string): void{
-    console.log(errmsg);
-    
-}
-function handleError(errmsg: string): never{
-    throw new Error(errmsg);
-    
+function consoleError(errmsg: string): void {
+  console.log(errmsg);
 }
 
+function handleError(errmsg: string): never {
+  throw new Error(errmsg);
+}
 
-
-export {}
+export {};

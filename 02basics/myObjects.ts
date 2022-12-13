@@ -4,69 +4,52 @@
 //     isAvtive: true
 // }
 
-// function createUser({name: string, isPaid: boolean}){}
+//^ Here we are defining the type of the object that the function is accepting
+function createUser({ name: string, isPaid: boolean }) {}
+createUser({ name: "hitesh", isPaid: false });
 
-// let newUser = {name: "hitesh", isPaid: false, email: "h@h.com"}
+//^ Return type of function is an object here with name and price
+function createCourse(): { name: string; price: number } {
+  return { name: "reactjs", price: 399 };
+}
 
-// createUser(newUser)
+//^ We can create type for the object and use it in the functions as well
+//^ In the below function we are able to use the User type to define what the function will be accepting and returning
 
+type User = {
+  name: string;
+  email: string;
+  isActive: boolean;
+  credcardDetails?: number;
+};
 
-
-// function createCourse():{name: string, price: number}{
-//     return {name: "reactjs", price: 399}
-// }
-
-
-// type User = {
-//     name: string;
-//     email: string;
-//     isActive: boolean
-// }
-
-
-// function createUser(user: User): User{
-//     return {name: "", email: "", isActive: true}
-// }
+function createUser2(user: User): User {
+  return { name: "", email: "", isActive: true };
+}
 
 // createUser({name: "", email: "", isActive: true})
 
+// let myUser: User = {
+//   _id: "1245",
+//   name: "h",
+//   email: "h@h.com",
+//   isActive: false,
+// };
 
-type User = {
-    readonly _id: string
-    name: string
-    email: string
-    isActive: boolean
-    credcardDetails?: number
-}
+// type cardNumber = {
+//   cardnumber: string;
+// };
 
-let myUser: User = {
-    _id: "1245",
-    name: "h",
-    email: "h@h.com",
-    isActive: false
-}
+// type cardDate = {
+//   cardDate: string;
+// };
 
-type cardNumber = {
-    cardnumber: string
-}
+// type cardDetails = cardNumber &
+//   cardDate & {
+//     cvv: number;
+//   };
 
-type cardDate = {
-    cardDate: string
-}
-
-type cardDetails = cardNumber & cardDate & {
-    cvv: number
-}
-
-
-myUser.email = "h@gmail.com"
+// myUser.email = "h@gmail.com";
 // myUser._id = "asa"
 
-
-
-
-
-
-
-
-export {}
+export {};
