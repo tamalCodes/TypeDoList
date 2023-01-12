@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+    font-family: "Gotham";
+    src: local("Nasalisation"), url("../fonts/Gotham.otf") format("opentype");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Raleway";
+    src: local("Raleway"), url("../fonts/Raleway.ttf") format("truetype");
+    font-weight: 500;
+}
