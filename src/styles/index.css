@@ -16,3 +16,8 @@
     src: local("Raleway"), url("../fonts/Raleway.ttf") format("truetype");
     font-weight: 500;
 }
+
+body {
+    --tw-bg-opacity: 1;
+    background-color: rgb(17 24 39 / var(--tw-bg-opacity));
+}
