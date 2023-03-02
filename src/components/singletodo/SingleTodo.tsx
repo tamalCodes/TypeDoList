@@ -3,7 +3,7 @@ import { FiEdit } from 'react-icons/fi'
 import { BiTrash } from 'react-icons/bi'
 import { BsCheckSquare } from 'react-icons/bs'
 import { RxCross2 } from 'react-icons/rx'
-import { showErrorToast } from '../../utils/toastMessage'
+import { showErrorToast, showSuccessToast } from '../../utils/toastMessage'
 import { Todo } from '../../models/todoModel'
 import { AiOutlineSave } from 'react-icons/ai'
 
@@ -33,13 +33,6 @@ const SingleTodo = ({ el, index, todos, setTodos }: Props) => {
         }))
     }
 
-    /* 
-    This function checks the "id" property of each "todo" object in the "todos" array and returns true if the "id" property of the "todo" object is not equal to the "id" property of the "el" object. This means that the element with the same id as the "el" object will be excluded from the    filtered array.
-
-    The filtered array is then passed to the setTodos() function, which updates the state of the todos with the filtered array.
-    */
-
-
     const handleDeletetask = (el: Todo) => {
         setTodos(todos.filter((todo) => {
             return todo.id !== el.id
@@ -53,16 +46,23 @@ const SingleTodo = ({ el, index, todos, setTodos }: Props) => {
     }
 
     const handleSave = () => {
-        setTodos(todos.map((todo) => {
-            if (todo.id === el.id) {
-                return {
-                    ...todo,
-                    title: editText
+
+        if (el.title !== editText) {
+            setTodos(todos.map((todo) => {
+                if (todo.id === el.id) {
+                    return {
+                        ...todo,
+                        title: editText
+                    }
                 }
-            }
-            return todo
-        }))
-        setisEdit(!isEdit)
+                return todo
+            }))
+            setisEdit(!isEdit)
+            showSuccessToast("Todo updated")
+        } else {
+            setisEdit(!isEdit)
+        }
+
     }
 
     return (
