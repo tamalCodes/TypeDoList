@@ -47,7 +47,7 @@ const InputField = ({ task, setTask, todos, setTodos }: Props) => {
 
 
         <>
-            <input type="text" placeholder='Input your task !' className='font-raleway w-[60vw] h-[2.5rem] rounded-[3px] mt-[2.7rem] bg-gray-200 text-[24px] pl-[2rem] ' value={task} onChange={handleChange} id="taskinput" />
+            <input type="text" placeholder='Input your task !' className='font-raleway w-[60vw] h-[2.5rem] rounded-[3px] mt-[2.7rem] bg-gray-200 text-[24px] pl-[2rem] ' value={task} onChange={handleChange} id="taskinput" autoFocus />
             <br />
 
             <button className='submitbutton bg-yellow-500 font-raleway text-[24px] p-[10px] rounded-[5px] mt-10 cursor-pointer ' onClick={handleAddTask}>Add to list</button>
