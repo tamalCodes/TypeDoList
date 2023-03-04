@@ -36,7 +36,7 @@ function useTaskCollection() {
       {
         id: uuidv4(),
         column: ColumnType.COMPLETED,
-        title: 'Task 4',
+        title: 'Task 3',
         color: 'green.300',
       },
     ],
